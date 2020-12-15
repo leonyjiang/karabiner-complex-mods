@@ -1,0 +1,53 @@
+{
+  "title": "Firefox bindings.",
+  "rules": [
+    {
+      "description": "Firefox: map ⌘⇧N to open new private browser.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": ["command", "shift"]
+            }
+          },
+          "to": {
+            "key_code": "p",
+            "modifiers": ["command", "shift"]
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["org.mozilla.firefox"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Firefox: map ⌘⇧B to toggle bookmarks toolbar.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": ["command", "shift"]
+            }
+          },
+          "to": {
+            "key_code": "u",
+            "modifiers": ["command", "shift"]
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["org.mozilla.firefox"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
